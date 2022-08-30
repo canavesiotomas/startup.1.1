@@ -75,7 +75,15 @@ function menu() {
        
      }else if (selection == 2) {
         console.log("Facturacion");
-        console.log("Proximamente podra facturar")
+        console.log("Proximamente podra facturar");
+        let nombre = prompt("Nombre del item")
+        let precio = stock[nombre].price1
+        let units = prompt("Ingrese Cantidad")
+        function finalPrice() {
+                return precio*units            
+            }
+
+        console.log("El precio final del item es $" + finalPrice());
 
      } else if (selection == 3) {
         console.log("New Product");
