@@ -37,12 +37,12 @@ function finalPrice() {
     console.log("Facturacion");
         console.log("Proximamente podra facturar");
         let nombre = prompt("Nombre del item")
-        let precio = stock[nombre][1];
+        let precio = stock[nombre][1] * stock[nombre][3];
         let units = prompt("Ingrese Cantidad")
         function final() {
                 return precio*units            
             }    
-        console.log("El Precio Final es $" + final());
+        console.log("El Precio Final con impuestos es $" + final());
 }
 //
 function newProduct() {
