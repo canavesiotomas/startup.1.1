@@ -1,38 +1,53 @@
 // Start Up 
-const stock = {
-    product1: [ "ItemA", 10, 15, 1.21],
-    product2: [ "ItemB", 10, 15, 1.21],
-    product3: [ "ItemC", 10, 15, 1.21],
-    product4: [ "ItemD", 10, 15, 1.21],
-    product5: [ "ItemE", 10, 15, 1.21],
-    product6: [ "ItemF", 10, 15, 1.21],
-    product7: [ "ItemG", 10, 15, 1.21]       
-}
-
+const stock = [
+    { id: "itemA", price: 10, units: 15, tax: 1.21},
+    { id: "itemB", price: 10, units: 15, tax: 1.21},
+    { id: "itemC", price: 10, units: 15, tax: 1.21},
+    { id: "itemD", price: 10, units: 15, tax: 1.21},
+    { id: "itemE", price: 10, units: 15, tax: 1.21},
+    { id: "itemF", price: 10, units: 15, tax: 1.21},
+    { id: "itemG", price: 10, units: 15, tax: 1.21},
+]
 //
 function analitics(){
     console.table(stock)
 }
 //
-function searchProduct() {
-    let nombre = prompt("Ingrese Nombre del Producto").toLowerCase()
-    console.table(stock[nombre]);
+function searchProduct(value) { 
+    console.table(stock.find(stok => stok.id === value));
+}
+//
+function verifyItem(value) {
+ return stock.some(real=> real.id === value)
+
+}
+//
+function requestProduct() {
+   let value = prompt("Ingrese el Nombre del producto o Presione Enter para ir al menu anterior");
+    if (verifyItem(value) === false){
+        alert("El producto no Existe");
+        select();
+    }else if(value == null){
+        select()
+    }else{
+        searchProduct(value);}   
 }
 //
 function select() {
-    let dataSelection = prompt("1. Vista General; 2. Consultar Producto")
+    let dataSelection = prompt("1. Vista General; 2. Consultar Producto; 3. Salir")
 if(dataSelection == 1){
     console.log("Datos de Stock")
     analitics();
 } else if(dataSelection == 2){
-    searchProduct();
+    requestProduct();
+}else if(dataSelection == 3){
+    menu();
 } else if (dataSelection != 1 && 2){
     alert("seleccione una opcion valida");
     menu();
 }
 }
 //
-
 function finalPrice() {
     console.log("Facturacion");
         console.log("Proximamente podra facturar");
@@ -47,18 +62,18 @@ function finalPrice() {
 //
 function newProduct() {
     console.log("New Product");
-        
-    let nameN = prompt("Nombre");
-    let unitsN = prompt("Unidades");
-    let priceN = prompt("Precio");
-    let taxN = prompt("Impuestos");
+
+    let id = prompt("Nombre");
+    let units = prompt("Unidades");
+    let price = prompt("Precio");
+    let tax = prompt("Impuestos");
 
     class stock{
         constructor(item){
-            this.item = nameN;
-            this.units1 = unitsN;
-            this.price1 = priceN;
-            this.tax1 = taxN 
+            this.item = id;
+            this.price1 = price;
+            this.units1 = units;
+            this.tax1 = tax 
         }
     }
         const itemN =  new stock(); 
@@ -82,5 +97,6 @@ function menu() {
    menu()
 }
 }
-
 menu();
+
+
