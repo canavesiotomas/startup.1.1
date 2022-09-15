@@ -1,4 +1,15 @@
 // Start Up 
+const button1 = document.getElementById("data");
+button1.addEventListener("click", select)
+
+const button2 = document.getElementById("newProduct");
+button2.addEventListener("click", newProduct)
+
+const button3 = document.getElementById("pedidos");
+button3.addEventListener("click", finalPrice)
+
+
+//
 const stock = [
     { id: "itemA", price: 10, units: 15, tax: 1.21},
     { id: "itemB", price: 10, units: 15, tax: 1.21},
@@ -44,7 +55,7 @@ if(dataSelection == 1){
     menu();
 } else if (dataSelection != 1 && 2){
     alert("seleccione una opcion valida");
-    menu();
+    
 }
 }
 //
@@ -83,6 +94,7 @@ function newProduct() {
 
 //
 function menu() {
+
     let selection = prompt("1. Datos; 2.Facturación; 3. Nuevo Producto; 4.Salir");
      if (selection == 1) {
          select();
@@ -97,6 +109,6 @@ function menu() {
    menu()
 }
 }
-menu();
+// menu();
 
 
