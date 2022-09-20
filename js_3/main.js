@@ -7,18 +7,17 @@ button2.addEventListener("click", newProduct)
 
 const button3 = document.getElementById("pedidos");
 button3.addEventListener("click", finalPrice)
-
+//
+prod1 = { id: "itemA", price: 10, units: 15, tax: 1.21},
+prod2 = { id: "itemB", price: 10, units: 15, tax: 1.21},
+prod3 = { id: "itemC", price: 10, units: 15, tax: 1.21},
+prod4 = { id: "itemD", price: 10, units: 15, tax: 1.21},
+prod5 = { id: "itemE", price: 10, units: 15, tax: 1.21},
+prod6 = { id: "itemF", price: 10, units: 15, tax: 1.21},
+prod7 = { id: "itemG", price: 10, units: 15, tax: 1.21}
 
 //
-const stock = [
-    { id: "itemA", price: 10, units: 15, tax: 1.21},
-    { id: "itemB", price: 10, units: 15, tax: 1.21},
-    { id: "itemC", price: 10, units: 15, tax: 1.21},
-    { id: "itemD", price: 10, units: 15, tax: 1.21},
-    { id: "itemE", price: 10, units: 15, tax: 1.21},
-    { id: "itemF", price: 10, units: 15, tax: 1.21},
-    { id: "itemG", price: 10, units: 15, tax: 1.21},
-]
+const stock = [ prod1, prod2, prod3, prod4, prod5, prod6, prod7]
 //
 function analitics(){
     console.table(stock)
@@ -59,21 +58,40 @@ if(dataSelection == 1){
 }
 }
 //
+
+//
 function finalPrice() {
-    console.log("Facturacion");
-        console.log("Proximamente podra facturar");
-        let nombre = prompt("Nombre del item")
-        let precio = stock[nombre][1] * stock[nombre][3];
-        let units = prompt("Ingrese Cantidad")
-        function final() {
-                return precio*units            
-            }    
-        console.log("El Precio Final con impuestos es $" + final());
+    let val = prompt("Ingrese Producto")
+    if (val == "prod1") {
+        const {id, price, units, tax} = prod1;
+        console.log(price*tax)
+    }else if (val == "prod2") {
+        const {id, price, units, tax} = prod2;
+        console.log(price*tax)
+    }else if (val == "prod3") {
+        const {id, price, units, tax} = prod3;
+        console.log(price*tax)
+    }else if (val == "prod4") {
+        const {id, price, units, tax} = prod4;
+        console.log(price*tax)
+    }else if (val == "prod5") {
+        const {id, price, units, tax} = prod5;
+        console.log(price*tax)
+    }else if (val == "prod6") {
+        const {id, price, units, tax} = prod6;
+        console.log(price*tax)
+    }else if (val == "prod7") {
+        const {id, price, units, tax} = prod7;
+        console.log(price*tax)
+    }else {
+        alert("Ingrese Valor Existente");
+        
+    }
+
 }
 //
 function newProduct() {
     console.log("New Product");
-
     let id = prompt("Nombre");
     let units = prompt("Unidades");
     let price = prompt("Precio");
@@ -90,8 +108,16 @@ function newProduct() {
         const itemN =  new stock(); 
         console.table(itemN);
         console.log("Proximamente podra guardar el elemento nuevo"); 
+
+
+        localStorage.setItem(JSON.stringify(itemN))
+
     }
 
+//
+function saveValues() {
+    
+}
 //
 function menu() {
 
@@ -110,5 +136,3 @@ function menu() {
 }
 }
 // menu();
-
-
