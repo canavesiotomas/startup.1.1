@@ -5,12 +5,17 @@
         font-family: "Work Sans", sans-serif;
         box-sizing: content-box;
 }
+
+a{
+    text-decoration: none;
+}
 /* Body */
 .body {
     /* display: grid;
     grid-template-areas: "header" "main"; */
     background-image: url(../sources/logo/StartUpHome.png);
     background-repeat: no-repeat;
+    background-color: #04109b;
   } 
 
 /* Header */
@@ -58,14 +63,16 @@
     margin: 100px;
     width: 250px;
     border-radius: 25px;
-    background: linear-gradient(180deg, #101797, darkblue, blue );
-    animation: colordeg 1s infinite ease;
+    background: linear-gradient(180deg, #05006c, #101797, #0513d8);
     display: flex;
     flex-flow: column;
-    align-items: center;
-
-    
+    align-items: center;  
 }
+
+.section:hover{
+   filter: grayscale(15%);
+}
+
 .cardPh{
     width: 95%;
 }
@@ -88,13 +95,72 @@
 }
 
 .sectionH3:hover{
-    background: linear-gradient(75deg, #101797, rgba(0, 0, 139, 0.459) );
+    background:  #7377c2 ;
     animation: buttondeg 2.5s infinite ease;
-    color: white;
+    color: darkblue;
     cursor: pointer;
 }
 
+/*Data*/
+.titleD{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h2D{
+    text-align: center;
+    color: #101797;
+    font-size: 3rem;
+    background-color: #fff;
+    width: 15vh;
+
+    border-radius: 25px;
+    background-position: center;    
+}
+
+.spBody{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #05006c, #101797, #171e9e);
+    background-repeat: no-repeat;
+    
+}
+
+.back{
+    display: flex;
+    justify-content: start;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
 /*keyframes*/
+.dataTable{
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#101797;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column ;
+    width: 25%;
+  
+}
+
+.tP{
+    background-color:#05006c ;
+    color: #fff;
+    border-radius: 25px;
+    text-align: center; 
+    margin: 4%;
+    padding: 4%;
+}
+
+
+
 
 @keyframes colordeg{
     0%{
@@ -123,3 +189,4 @@
         background-position: 50% 0%;
     }
 }
+
